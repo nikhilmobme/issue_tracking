@@ -1,0 +1,44 @@
+
+
+
+<div class="container-main">
+
+  <div class="form-group">
+  <div class="center-container">
+        <%=form_for :user_query, url: add_query_path ,method: :post do |f| %>
+            <div class="form-group">
+              <%= f.label :Name %><br>
+              <%=f.text_field(:raised_by, {:class=>'form-control'}) %>
+            </div>
+            <div class="form-group">
+              <%= f.label :Email %><br>
+              <%=f.text_field(:email, {:class=>'form-control'}) %>
+            </div>
+
+            <div class="form-group">
+            <%= f.label :Department %><br>
+            <select name="department" class="form-control">
+                  <option id="" value="">Choose a department</option>
+                  <option id="development" value="Development">Development</option>
+                  <option id="marketing_service" value="Marketing services">Marketing services</option>
+                  <option id="cust_service" value="Customer services">Customer services</option>
+              </select>
+            </div>
+              <div class="form-group">
+              <%= f.label :Subject %><br>
+              <%=f.text_field(:subject, {:class=>'form-control'}) %>
+            </div>
+             <div class="form-group">
+              <%= f.label :Query %><br>
+               <%=f.text_area(:query, {:class=>'form-control',:rows=>'6'}) %>
+
+            </div>
+            <div class="submit-form">
+              <%=f.submit "Submit", :class=>"btn btn-success"%>
+            </div>
+          </div>
+        </div>           
+        <%end%> 
+
+  </div>
+</div>

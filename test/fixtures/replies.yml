@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ticket_id: MyString
+  reply: MyString
+  replied_by: MyString
+
+two:
+  ticket_id: MyString
+  reply: MyString
+  replied_by: MyString

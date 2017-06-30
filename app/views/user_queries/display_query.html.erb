@@ -1,0 +1,66 @@
+
+<hr/>
+<div class="tab">
+  <button class="tablinks" id="defaultOpen" onclick="openList(event, 'Unassigned')">UnAssigned tokens</button>
+  <button class="tablinks" onclick="openList(event, 'Assigned')">Assigned Tokens</button>
+  <button class="tablinks" onclick="openList(event, 'Completed')">Completed</button>
+</div>
+
+<div id="Unassigned" class="tabcontent">
+  <%if @unassigned%>
+  <%@unassigned.each do |unassigned|%>
+  <div class="ticket-div">
+  <h4><%=unassigned.subject%></h4>
+    <h6 class="div-dep-ticket">Department : <%=unassigned.department%></h6>
+    <div class="float-right"><%=link_to "View",view_query_path(unassigned)%></div>
+  </div>
+  <%end%>
+  <%end%>
+</div>
+
+<div id="Assigned" class="tabcontent">
+<% if @assigned%>
+ <%@assigned.each do |assigned|%>
+  <div class="ticket-div">
+  <h4><%=assigned.subject%></h4>
+    <h6 class="div-dep-ticket">Department : <%=assigned.department%></h6>
+    <h6 class="div-dep-ticket">Owner: <%=assigned.owner%></h6>
+    <div class="float-right"><%=link_to "View",view_query_path(assigned)%></div>
+  </div>
+  <%end%>
+  <% end%>
+</div>
+
+<div id="Completed" class="tabcontent">
+ <% if @completed%>
+ <%@completed.each do |completed|%>
+  <div class="ticket-div">
+  <h4><%=completed.subject%></h4>
+    <h6 class="div-dep-ticket">Department : <%=completed.department%></h6>
+    <h6 class="div-dep-ticket">Owner: <%=completed.owner%></h6>
+    <div class="float-right"><%=link_to "View details",view_details_path(completed)%></div>
+  </div>
+  <%end%>
+  <% end%>
+</div>
+
+
+<script>
+document.getElementById("defaultOpen").click();
+function openList(evt, status) {
+    var i, tabcontent, tablinks;
+
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    document.getElementById(status).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+</script>

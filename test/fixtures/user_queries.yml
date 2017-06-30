@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ticket_id: MyString
+  subject: MyString
+  query: MyString
+  raised_by: MyString
+  owener: MyString
+  status: MyString
+  email: MyString
+
+two:
+  ticket_id: MyString
+  subject: MyString
+  query: MyString
+  raised_by: MyString
+  owener: MyString
+  status: MyString
+  email: MyString

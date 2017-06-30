@@ -1,0 +1,7 @@
+<h3>hi  <%=@user_query.raised_by%></h3>
+<br/>
+
+<h4>You got a reply from <%=@reply.replied_by%></h4>
+<%= link_to "view reply" ,view_reply_url(@user_query)%> 
+<h4>Query status :<%=@user_query.status%></h4>
+<h5>Thanks...</h5>

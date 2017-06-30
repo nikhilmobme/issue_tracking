@@ -1,0 +1,53 @@
+<div class="container-view-query">
+<div class="view-query float-left">
+<div class="div-query-info">
+<h2><%=@user_query.subject%></h2>
+<h4>Raised by : <%=@user_query.raised_by%></h4>
+<h4>Department : <%=@user_query.department%></h4>
+<br/>
+<h4>Query :</h4>
+<h5><%=@user_query.query%></h5>
+</div>
+<div class="float-right">
+<button id="reply-query" class="reply-query" onclick="ToggleReply()">Reply Now</button>
+ <%= link_to '<button id="reply-onhold" class="reply-query" title="This will mark the query in ONHOLD state.">Reply Later</button>'.html_safe, onhold_status_path(@user_query) %>
+<%=link_to '<button id="reply-cancel" class="reply-query">Go back</button>'.html_safe,display_query_path %>
+</div>
+
+
+<div class="div-reply-area">
+<%=form_for :reply, url: save_reply_path,method: :post do |f| %>
+<%= f.hidden_field :ticket_id, :value => @user_query.ticket_id %>
+<%= f.label :reply %><br>
+<%=f.text_area(:reply, {:class=>'form-control',id:'reply-box',rows:'6'}) %>
+<%=f.submit "Send",:class=>"btn btn-default"%>
+<%end%>
+</div>
+</div>
+
+
+<div class="partial-div float-right">
+<div class="choose-owner">
+<h5>Too complicated or out of your department!! Assign this to someone else.</h5>
+</div>
+<div class="limit-dd">
+<%=form_for :employee, url: save_owner_path,method: :post do |f| %>
+ <select name="owner" class="form-control">
+                <% @employee.each do|employee| %>
+                  <option id=<%=employee.name%> value=<%=employee.name%>> <%=employee.name%>
+                  </option>
+                <%end%>
+ </select>
+<%= f.hidden_field :ticket_id, :value => @user_query.ticket_id %>
+<%=f.submit "Assign",:class=>"btn btn-default"%>
+<%end%>
+</div>
+</div>
+</div>
+
+<script>
+	function ToggleReply()
+	{
+      $('.div-reply-area').toggle();
+	}
+</script>

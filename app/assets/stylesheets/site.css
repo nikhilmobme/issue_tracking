@@ -1,0 +1,122 @@
+.center-container{
+	width: 500px;
+	margin-left: 400px;
+}
+
+.center-container-login{
+	width: 450px;
+    margin-left: 400px;
+    margin-top: 100px;
+}
+
+div.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+div.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+div.tab button:hover {
+    background-color: #ddd;
+}
+
+div.tab button.active {
+    background-color: #ccc;
+}
+
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+
+.ticket-div{
+ border: none 1px #5c7ea0;
+ padding: 20px;
+ margin: 5px;
+background-color: ghostwhite;
+width:750px;
+}
+
+
+.div-dep-ticket{
+    font-style: oblique;
+}
+
+.float-right{
+    float:right;
+}
+
+.float-left{
+    float: left;
+}
+
+.view-query{
+    background-color: #eae1e1;
+    width: 60%;
+    height: 80%;
+    min-height: 400px;
+    padding: 10px;
+}
+
+.partial-div{
+    width: 38%;
+    min-height: 400px;
+}
+
+.div-query-info
+{
+    padding: 10px;
+}
+
+
+.reply-query{
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: #aaa;
+}
+
+.div-reply-area
+{
+    display: none;
+}
+
+.choose-owner
+{
+width: 500px;
+}
+
+.limit-dd{
+    width:200px;
+    margin-left: 90px;
+}
+
+#onholdconfirmation{
+    display:none;
+    background-color: #ddf3dd;
+    width: 300px;
+    margin-left: 100px;
+}
+.view_reply
+{
+    min-height: 400px
+}
+.view
+{
+        padding-left: 200px;
+    padding-right: 200px;
+    padding-top: 75px;
+}
+
